@@ -1,4 +1,4 @@
-import { isSameDay } from './utils'
+import { isSameDay } from '../utils'
 
 type DateCellProps = {
   date?: Date
@@ -6,6 +6,7 @@ type DateCellProps = {
   active?: boolean
   onClick?: () => void
   disabled?: boolean
+  className?: string
 }
 
 /**
@@ -21,6 +22,7 @@ export const DateCell = ({
   active,
   onClick,
   disabled,
+  className,
 }: DateCellProps) => {
   let today = false
   if (date) {
@@ -29,13 +31,14 @@ export const DateCell = ({
 
   return (
     <div
-      className={`
-         text-sm
-         cursor-pointer p-1
-         rounded-md font-semibold flex items-center justify-center
-         ${disabled ? 'text-slate-400' : 'text-slate-800'}
-         ${today && !active ? 'text-blue-500' : ''}
-         ${active ? 'bg-blue-500 text-white' : 'hover:bg-blue-100 '}`}
+      className={
+        `text-sm cursor-pointer p-1
+         rounded-md flex items-center justify-center
+         ${disabled ? ' text-slate-400' : ' font-semibold text-slate-800'}
+         ${today && !active ? ' !text-blue-500' : ''}
+         ${active ? ' bg-blue-500 text-white' : 'hover:bg-blue-100 '}` +
+        (className || '')
+      }
       onClick={onClick}
     >
       {label || date?.getDate()}

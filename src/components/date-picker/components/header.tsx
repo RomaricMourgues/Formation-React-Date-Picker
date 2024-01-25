@@ -1,4 +1,4 @@
-import { Button } from '../../atoms/button'
+import { Button } from '../../../atoms/button'
 
 /**
  * Header is the header of the date picker with buttons to navigate between months.
