@@ -1,15 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body .my-custom-class:disabled {
-    background: red;
-}
-
-.my-custom-class:hover {
-    background: blue;
-}
-
-.my-custom-class {
-    background: green;
-}
